@@ -1,6 +1,6 @@
 # dotfiles
 
-A ThinkPad-oriented, red-on-black, minimal i3 setup for Arch Linux. Dark/light toggle that re-skins the whole desktop from one command. No DE, no GTK bloat — just i3 + polybar + picom + kitty, plus a handful of helper scripts.
+A ThinkPad-oriented, red-on-black, minimal i3 setup for Arch Linux. Dark/light toggle that re-skins the whole desktop from one command. No DE, no GTK bloat. I3 + polybar + picom + kitty, plus a handful of helper scripts.
 
 ## Install
 
