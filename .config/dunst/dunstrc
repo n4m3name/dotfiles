@@ -1,0 +1,4 @@
+[global]
+    foreground = "#FF0000"  # Red text
+    background = "#000000"  # Black background
+    frame_color = "#FF0000" # Red frame
