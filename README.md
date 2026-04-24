@@ -43,7 +43,7 @@ Theme pairs live in `.config/themes/{i3,polybar,kitty}/{dark,light}.*`. The acti
 | cava       | `.config/cava/config`                       |
 | neofetch   | `.config/neofetch/config`                   |
 | GTK 2/3    | `.gtkrc-2.0`, `.config/gtk-3.0/settings.ini`|
-| Nvim       | `.config/nvim/colors/blackred.lua` (colorscheme only — drop-in for any neovim) |
+| Nvim       | `.config/nvim/colors/blackred.lua` (colorscheme only, drop-in for any neovim) |
 | VS Code    | `.config/Code/User/settings.json` (font + `[Black++ Theme]` red overrides) |
 | Themes     | `.config/themes/`                           |
 | Switcher   | `.local/bin/theme`                          |
@@ -62,11 +62,11 @@ VS Code dark theme (optional, Marketplace extension):
 code --install-extension amerey.blackplusplus
 ```
 
-Light mode uses the built-in "Default High Contrast Light" — no install.
+Light mode uses the built-in "Default High Contrast Light", no install needed.
 
 ## What you may want to tweak
 
-- **Firefox profile** — `theme` auto-detects `*.default-release`. If yours has a different name, export `FF_PROFILE=/path/to/profile` before running.
-- **VS Code themes** — `.local/bin/theme` sets the theme names `Default High Contrast Light` (light) and `Black++ Theme` (dark). Edit `apply_vscode` in the script to use others.
-- **Polybar wifi interface** — `wifi-status.sh` auto-detects the first `wl*` interface. If you have multiple, hardcode the one you want.
-- **Keyboard backlight** — only works on ThinkPads with `/sys/class/leds/tpacpi::kbd_backlight/`. The switcher silently skips it otherwise.
+- **Firefox profile**: `theme` auto-detects `*.default-release`. If yours has a different name, export `FF_PROFILE=/path/to/profile` before running.
+- **VS Code themes**: `.local/bin/theme` sets the theme names `Default High Contrast Light` (light) and `Black++ Theme` (dark). Edit `apply_vscode` in the script to use others.
+- **Polybar wifi interface**: `wifi-status.sh` auto-detects the first `wl*` interface. If you have multiple, hardcode the one you want.
+- **Keyboard backlight**: only works on ThinkPads with `/sys/class/leds/tpacpi::kbd_backlight/`. The switcher silently skips it otherwise.
