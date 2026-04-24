@@ -70,7 +70,3 @@ Light mode uses the built-in "Default High Contrast Light" — no install.
 - **VS Code themes** — `.local/bin/theme` sets the theme names `Default High Contrast Light` (light) and `Black++ Theme` (dark). Edit `apply_vscode` in the script to use others.
 - **Polybar wifi interface** — `wifi-status.sh` auto-detects the first `wl*` interface. If you have multiple, hardcode the one you want.
 - **Keyboard backlight** — only works on ThinkPads with `/sys/class/leds/tpacpi::kbd_backlight/`. The switcher silently skips it otherwise.
-
-## License
-
-MIT — do what you want.
