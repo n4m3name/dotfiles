@@ -15,12 +15,6 @@ cd ~/Documents/projects/dotfiles
 
 Everything gets symlinked, so edits to files in this repo are live immediately. Anything it would overwrite gets moved to `*.bak.<timestamp>`.
 
-Then log in to an i3 session and run:
-
-```bash
-theme dark     # or: theme light
-```
-
 ## The `theme` switcher
 
 `~/.local/bin/theme` flips the whole desktop between dark and light in one shot:
