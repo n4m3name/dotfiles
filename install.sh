@@ -63,7 +63,7 @@ done < <(find .config .local .scripts .gtkrc-2.0 -type f -print0 2>/dev/null)
 
 echo
 echo "==> Making scripts executable"
-for f in "$HOME/.local/bin/theme" "$HOME/.scripts/"*.sh; do
+for f in "$HOME/.local/bin/theme" "$HOME/.scripts/"*.sh "$HOME/.config/i3/"*.py; do
     [[ -e "$f" ]] && run chmod +x "$f"
 done
 
@@ -72,7 +72,8 @@ if [[ $DEPS -eq 1 ]]; then
     echo "==> Installing packages"
     PAC=(i3-wm polybar picom kitty dunst conky cava neofetch rofi \
          pipewire pavucontrol bluez-utils blueman network-manager-applet \
-         maim clipit batsignal hsetroot fzf light xss-lock i3lock dex)
+         maim clipit batsignal hsetroot fzf light xss-lock i3lock dex \
+         python-i3ipc)
     AUR=(mullvad-vpn-bin)
     if command -v pacman >/dev/null; then
         run sudo pacman -S --needed "${PAC[@]}"
