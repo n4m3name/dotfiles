@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+pidfile="${XDG_RUNTIME_DIR:-/tmp}/nosleep.pid"
+
+is_running() {
+    [[ -f "$pidfile" ]] && kill -0 "$(cat "$pidfile")" 2>/dev/null
+}
+
+case "${1:-status}" in
+    on)
+        if is_running; then
+            echo "nosleep=on (already)"
+            exit 0
+        fi
+        why="${*:2}"
+        why="${why:-nosleep toggle}"
+        nohup systemd-inhibit \
+            --what=idle:sleep:handle-lid-switch \
+            --who=nosleep \
+            --why="$why" \
+            --mode=block \
+            sleep infinity >/dev/null 2>&1 &
+        echo $! > "$pidfile"
+        disown
+        echo "nosleep=on"
+        ;;
+    off)
+        if is_running; then
+            kill "$(cat "$pidfile")" 2>/dev/null || true
+            rm -f "$pidfile"
+            echo "nosleep=off"
+        else
+            rm -f "$pidfile"
+            echo "nosleep=off (already)"
+        fi
+        ;;
+    status|"")
+        if is_running; then echo "nosleep=on"; else echo "nosleep=off"; fi
+        ;;
+    *)
+        echo "usage: nosleep [on|off|status]" >&2
+        exit 2
+        ;;
+esac

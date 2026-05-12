@@ -63,7 +63,7 @@ done < <(find .config .local .scripts .gtkrc-2.0 -type f -print0 2>/dev/null)
 
 echo
 echo "==> Making scripts executable"
-for f in "$HOME/.local/bin/theme" "$HOME/.scripts/"*.sh "$HOME/.config/i3/"*.py; do
+for f in "$HOME/.local/bin/theme" "$HOME/.local/bin/nosleep" "$HOME/.scripts/"*.sh "$HOME/.config/i3/"*.py; do
     [[ -e "$f" ]] && run chmod +x "$f"
 done
 
